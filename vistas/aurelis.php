@@ -1,3 +1,13 @@
+<?php
+    // PARA EVITAR QUE SE MUESTREN LAS NOICIAS DE ALERTA DE PHP
+    error_reporting(E_ALL ^ E_NOTICE);
+    // INICIAR LA SESIÓN - DEBE IR EN TODAS LAS PÁGINAS
+    session_start();
+    // CONEXION A LA BASE DE DATOS AURELIS_USUARIOS - DEBE IR EN TODAS LAS PÁGINAS
+    include '../php/conexion_usuarios.php';
+    // CONDICIONAL PARA ASEGURAR QUE SEA LA SESIÓN DEL USUARIO QUE INICIO SESIÓN
+    if(isset($_SESSION['usuario'])) {?>
+<!-- PHP CONTINUA AL FINAL DEL HTML -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -123,7 +133,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="../php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -490,3 +500,11 @@
 
 </body>
 </html>
+
+<?php
+// CONTINUACIÓN DE PHP 
+}else{
+    // DE NO SER EL USUARIO QUE INICIO SESIÓN SE REDIRECCIONA A INDEX.PHP
+    echo '<script> window.location="../index.php"; </script>';
+}
+?>
