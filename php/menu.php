@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin - Bootstrap Admin Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Navigation -->
+<!-- **************************************MENÚ SUPERIOR (COMPLETO)************************************* -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -43,10 +8,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="#">Aurelis</a>
             </div>
-            <!-- Top Menu Items -->
+
+            <!-- **************************************MENÚ SUPERIOR (LADO DERECHO)************************************* -->
             <ul class="nav navbar-right top-nav">
+                <!-- **************************************MENSAJES (MENÚ SUPERIOR)************************************* -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -57,8 +24,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong>1</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -73,24 +39,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong>2</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -103,6 +52,9 @@
                         </li>
                     </ul>
                 </li>
+                <!-- **************************************FIN MENSAJES (MENÚ SUPERIOR)************************************* -->
+
+                <!-- **************************************ALERTA (MENÚ SUPERIOR)************************************* -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -130,8 +82,14 @@
                         </li>
                     </ul>
                 </li>
+                <!-- **************************************FIN ALERTA (MENÚ SUPERIOR)************************************* -->
+
+                <!-- **************************************USUARIO (MENÚ SUPERIOR)************************************* -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../img/user.png" alt="UserImage" style="margin-top: -8px; width: 30px;height: 30px;">
+                    <!-- <i class="fa fa-user"></i> --> Administrador <b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -144,92 +102,62 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="../php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
+                <!-- **************************************FIN USUARIO (MENÚ SUPERIOR)************************************* -->
             </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <!-- **************************************FIN MENÚ SUPERIOR (LADO DERECHO)************************************* -->
+
+        <!-- **************************************MENÚ VERTICAL************************************* -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <li class="col-md-12" style="background-color: rgb(38,50,56); background-size: 100% 100%; background-position: center; pointer-events:none;">
+                        <a target="_blank" ng-href="http://www.techsoluxy.com" ><img src="../img/imgReporte.png" alt="software a medida" class="responsive-img center-box"></a>
                     </li>
-                    <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <li class="NavLateralDivider"></li>
+                    <li class="active">
+                        <a href="aurelis.php"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
+                    <li class="NavLateralDivider"></li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="clientes.php"><i class="fa fa-fw fa-bar-chart-o"></i> Clientes</a>
                     </li>
+                    <li class="NavLateralDivider"></li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> 3</a>
                     </li>
+                    <li class="NavLateralDivider"></li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> 4</a>
                     </li>
+                    <li class="NavLateralDivider"></li>
                     <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i>5</a>
                     </li>
+                    <li class="NavLateralDivider"></li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> 6</a>
+                    </li>
+                    <li class="NavLateralDivider"></li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> 7 <i class="fa fa-fw fa-caret-down"></i></a>
+                        <!-- **************************************SUBMENÚ************************************* -->
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">7.1</a>
                             </li>
+                            <li class="NavLateralDivider"></li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">7.2</a>
                             </li>
                         </ul>
+                        <!-- **************************************FIN SUBMENÚ************************************* -->
                     </li>
-                    <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    <li class="NavLateralDivider"></li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+        <!-- **************************************FIN MENÚ VERTICAL************************************* -->
         </nav>
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+    <!-- **************************************FIN MENÚ SUPERIOR (COMPLETO)************************************* -->
