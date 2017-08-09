@@ -162,8 +162,8 @@
         </nav>
     <!-- **************************************FIN MENÚ SUPERIOR (COMPLETO)************************************* -->
 
+<!-- CSS PARA LINEAS DE DIVISION EN EL MENU VERTICAL -->
 <style type="text/css">
-    /* CSS PARA LINEAS DE DIVISION EN EL MENU VERTICAL */
         .NavLateralDivider {
             height: 0 !important;
             width: 100% !important;

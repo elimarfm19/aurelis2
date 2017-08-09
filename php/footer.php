@@ -14,8 +14,8 @@
       <div class="footerDivider"></div>
   </footer>
 
+<!-- CSS PARA LINEAS DE DIVISION PARA EL FOOTER -->
  <style type="text/css">
-    /* CSS PARA LINEAS DE DIVISION PARA EL FOOTER */
     .footerDivider {
         height: 0 !important;
         width: 100% !important;

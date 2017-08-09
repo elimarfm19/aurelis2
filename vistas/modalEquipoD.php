@@ -21,3 +21,11 @@
       
     </div>
 </div>
+
+<!-- /* CSS PARA BAJAR EL MODAL equipoD (margin) */ -->
+<style type="text/css">
+  .modal-dialog {
+    width: 600px;
+    margin: 160px auto !important;
+}
+</style>
