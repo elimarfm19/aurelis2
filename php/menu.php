@@ -161,3 +161,16 @@
         <!-- **************************************FIN MENÚ VERTICAL************************************* -->
         </nav>
     <!-- **************************************FIN MENÚ SUPERIOR (COMPLETO)************************************* -->
+
+<style type="text/css">
+    /* CSS PARA LINEAS DE DIVISION EN EL MENU VERTICAL */
+        .NavLateralDivider {
+            height: 0 !important;
+            width: 100% !important;
+            background-color: transparent;
+            border: none;
+            border-top: 1px solid rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin: 0 auto !important;
+        }
+</style>
