@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- HOJA DE ESTILO PARA SWEETALERT (ALERTAS DE JAVASCRIPT) -->
+    <link href="../css/sweetalert.css" rel="stylesheet">
+    <!-- JAVASCRIPT PARA SWEETALERT -->
+    <script src="../js/sweetalert.min.js"></script>
+</head>
+<body>
 <?php
 	// INICIAR LA SESIÓN
 	session_start(); 
@@ -24,35 +34,29 @@
 			echo '<script> window.location="../vistas/aurelis.php"; </script>';
 		}else{
 			// MENSAJE DE VALORES INCORRECTOS (JAVASCRIPT)
-			echo '<script> alert("Usuario o contraseña incorrectos.");</script>';
+			echo '<script> swal({
+					  title: "ERROR",
+					  text: "Usuario o Contraseña Incorrectos",
+					  type: "error",
+					  showCancelButton: false,
+					  confirmButtonColor: "#DD6B55",
+					  confirmButtonText: "OK",
+					  closeOnConfirm: false,
+					  closeOnCancel: false
+					},
+					function(isConfirm){
+					  if (isConfirm) {
+					    window.location="../index.php";
+					  } else {
+					    swal("Cancelled", "Your imaginary file is safe :)", "error");
+					  }
+					});
+					</script>';
+			// echo '<script> alert("Usuario o contraseña incorrectos.");</script>';
 			// REDIRECCIÓN AL INDEX.PHP PARA QUE INICIE SESIÓN
-			echo '<script> window.location="../index.php"; </script>';
+			// echo '<script> window.location="../index.php"; </script>';
 		}
 	}
-
-
-
-// if(!empty($_POST)){
-// 	if(isset($_POST["usuario"]) &&isset($_POST["password"])){
-// 		if($_POST["usuario"]!=""&&$_POST["password"]!=""){
-// 			include ("../php/conexion_sesion.php");
-// 			$usuario = $_POST['usuario'];
-// 			$password = $_POST['password'];
-// 			$user_id=null;
-// 			$sql1= "SELECT * FROM usuario WHERE usuario = '$usuario' AND password = '$password'";
-// 			$query = pg_query($sql1) or die (pg_last_error());
-// 			while ($r=pg_fetch_array ($query)) {
-// 				$user_id=$r["usuario"];
-// 				break;
-// 			}
-// 			if($user_id==null){
-// 				print "<script>alert(\"Acceso invalido.\");window.location='../vistas/login.php';</script>";
-// 			}else{
-// 				session_start();
-// 				$_SESSION["user_id"]=$user_id;
-// 				print "<script>window.location='../vistas/home.php';</script>";
-// 			}
-// 		}
-// 	}
-// }
 ?>
+</body>
+</html>

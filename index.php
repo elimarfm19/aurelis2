@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <!-- Material Design Iconic Font CSS -->
     <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <!-- HOJA DE ESTILO PARA SWEETALERT (ALERTAS DE JAVASCRIPT) -->
+    <link href="css/sweetalert.css" rel="stylesheet">
+    <!-- JAVASCRIPT PARA SWEETALERT -->
+    <script src="js/sweetalert.min.js"></script>
 </head>
 <body class="font-cover" style="background-image: url('img/MaterialFontLogin.jpg')">
   <div class="container">
@@ -49,6 +53,7 @@
             </a> -->
           </button>
         </form>
+       <!--  <script> sweetAlert("Oops...", "Something went wrong!", "error");</script> -->
         <br><br>
     </div>
   </div>

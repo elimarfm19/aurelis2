@@ -2,7 +2,7 @@
 	
 	$user = 'postgres';         #USUARIO DE POSTGRES
 	$password = '1234';         #PASSWORD DE POSTGRES
-	$db = 'aurelis_usuarios';   #NOMBRE DE LA BASE DE DATOS
+	$db = 'aurelis';   #NOMBRE DE LA BASE DE DATOS
 	$port = 5432;               #NUMERO DEL PUERTO
 	$host = 'localhost';        #HOST
 
