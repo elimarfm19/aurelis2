@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title></title>
+    <!-- FUNCIONES CRUD PARA CLIENTE -->
+	<script src="../js/funcionesCliente.js"></script>
 </head>
 <body>
 <?php
@@ -11,23 +13,27 @@
     session_start();
     // CONEXION A LA BASE DE DATOS AURELIS
 	include('../php/conexion_aurelis.php');
-
+	// CONSULTA PARA OBTENER TODOS LOS REGISTROS DE LA TABLA clientes
 	$consulta1 = pg_query("SELECT * FROM clientes") or die (pg_last_error());
-
+	// CICLO PARA MOSTRAR REGISTRO POR REGISTRO EN LA TABLA
 	while($consulta = pg_fetch_array($consulta1)){
 		echo '<tr>
-				<td>'.$consulta['idCliente'].'</td>
+				<td>'.$consulta['cliente'].'</td>
 				<td>'.$consulta['nombre'].' '.$consulta['apellido'].'</td>
 				<td>'.$consulta['telefono1'].'</td>
 				<td>'.$consulta['telefono2'].'</td>
+
+				<td>
+					<!-- REFERENCIA A LA FUNCIÓN editarCliente UBICADA EN funcionesCliente.js -->
+					<a href="javascript:editarCliente('.$consulta['cliente'].');" class="glyphicon glyphicon-edit">
+					</a>
+					<!-- REFERENCIA A LA FUNCIÓN eliminarCliente UBICADA EN funcionesCliente.js -->
+					<a href="javascript:eliminarCliente('.$consulta['cliente'].');" class="glyphicon glyphicon-remove-circle">
+					</a>
+				</td>
 			</tr>';
 	}
 ?>
 
-	<style type="text/css">
-		td{
-			text-align: center;
-		}	
-	</style>
 </body>
 </html>

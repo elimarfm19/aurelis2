@@ -87,8 +87,8 @@
                 <!-- **************************************USUARIO (MENÚ SUPERIOR)************************************* -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../img/user.png" alt="UserImage" style="margin-top: -8px; width: 30px;height: 30px;">
-                    <!-- <i class="fa fa-user"></i> --> Administrador <b class="caret"></b>
+                        <img class="menuUsuario" src="../img/user.png" alt="UserImage">
+                    Administrador <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
 <!--                         <li>
@@ -113,7 +113,7 @@
         <!-- **************************************MENÚ VERTICAL************************************* -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="col-md-12" style="background-color: rgb(38,50,56); background-size: 100% 100%; background-position: center; pointer-events:none;">
+                    <li class="col-md-12 aurelis">
                         <a target="_blank" ng-href="http://www.techsoluxy.com" ><img src="../img/imgReporte.png" alt="software a medida" class="responsive-img center-box"></a>
                     </li>
                     <li class="NavLateralDivider"></li>
@@ -162,15 +162,3 @@
         </nav>
     <!-- **************************************FIN MENÚ SUPERIOR (COMPLETO)************************************* -->
 
-<!-- CSS PARA LINEAS DE DIVISION EN EL MENU VERTICAL -->
-<style type="text/css">
-        .NavLateralDivider {
-            height: 0 !important;
-            width: 100% !important;
-            background-color: transparent;
-            border: none;
-            border-top: 1px solid rgba(0,0,0,0.9);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            margin: 0 auto !important;
-        }
-</style>

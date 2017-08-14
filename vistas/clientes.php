@@ -19,12 +19,12 @@
     <title>Clientes</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
+    <!-- CSS PERSONALIZADO -->
+    <link href="../css/estiloAurelis.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- FUNCIONES CRUD PARA CLIENTE -->
+    <script src="../js/funcionesCliente.js"></script>
 </head>
 
 <body>
@@ -33,19 +33,29 @@
         <?php include '../php/menuClientes.php'; ?>
 
         <!-- **************************************CONTENIDO DE LA PÁGINA************************************* -->
-        <div id="page-wrapper" style="background-image: url('../img/fondo_2.jpeg'); background-size: 100% 100%; width: 1141px; height: 559px;">
+        <div id="page-wrapper">
 
             <div class="container-fluid">
-
-                <table class="tableClientes table-striped table-condensed table-hover">
-            <tr>
-                <th>ID Cliente</th>
-                <th>Nombre y Apellido</th>
-                <th>Telefono 1</th>
-                <th>Telefono 2</th>
-            </tr>
-            <?php include '../php/listarClientes.php'; ?>
-        </table>
+                <!-- CONTENEDOR PARA HACER TABLA RESPONSIVE -->
+                <div class="table-responsive col-md-10 col-md-offset-1" id="agregaClientes">
+                    <!-- INCLUYE EL MODAL PARA REGISTRAR CLIENTE -->
+                    <?php include '../vistas/modalNuevoC.php'; ?>
+                    <!-- BOTÓN PARA LEVANTAR MODAL REGISTRAR CLIENTE -->
+                    <button data-toggle="modal" data-target="#nuevoC" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID Cliente</th>
+                                <th>Nombre y Apellido</th>
+                                <th>Telefono 1</th>
+                                <th>Telefono 2</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <!-- INCLUYE LA FUNCIÓN CON LA QUE SE LISTAN LOS CLIENTES EN LA TABLA -->
+                        <?php include '../php/listarClientes.php'; ?>
+                    </table>
+                </div>
 
             </div>
             <!-- /.container-fluid -->
@@ -62,28 +72,7 @@
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
 
-    <style type="text/css">
-        /* PARA BAJAR LA TABLA (margin-top) */
-        .tableClientes {
-            width: 100%;
-            max-width: 100%;
-            margin-top: 10%;
-            margin-bottom: 0px;
-        }
-        /* ALINEAR TEXTO DEL ENCABEZADO DE LA TABLA */
-        th{
-            text-align: center;
-        }
-        /* PARA EVITAR EL SCROLL VERTICAL */
-        html,body { 
-          overflow:hidden; 
-        }
-    </style>
 
 </body>
 </html>

@@ -17,7 +17,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS PERSONALIZADO -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estiloIndex.css">
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="css/materialize.min.css">
     <!-- Material Design Iconic Font CSS -->
@@ -27,26 +27,26 @@
     <!-- JAVASCRIPT PARA SWEETALERT -->
     <script src="js/sweetalert.min.js"></script>
 </head>
-<body class="font-cover" style="background-image: url('img/MaterialFontLogin.jpg')">
+<body class="font-cover">
   <div class="container">
-    <div class="container-login center-align" style="border-radius: 10px; box-shadow: 8px 8px 8px black;">
-        <div style="margin:15px 0;">
+    <div class="container-login center-align">
+        <div class="inicioSesion">
             <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>
             <p>Inicio de Sesión</p>
         </div>
         <!-- FORMULARIO QUE TRABAJA CON LOGIN.PHP PARA REALIZAR EL INICIO DE SESIÓN -->
         <form action="http://localhost/aurelis2/php/login.php" method="post">
           <div class="input-field">
-              <input type="text" style="margin:20px 0;" name="usuario">
+              <input type="text" name="usuario">
               <label><i class="zmdi zmdi-account"></i>&nbsp; Usuario</label>
           </div>
           <div class="input-field col s12">
-              <input type="password" style="margin:20px 0;" name="password">
+              <input type="password" name="password">
               <label><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña</label>
           </div>
         
           <br>
-          <button class="btn btn-primary waves-effect waves-light" type="submit" style="color: black;"> INGRESAR 
+          <button class="btn btn-primary waves-effect waves-light" type="submit"> INGRESAR 
             <i class="zmdi zmdi-mail-send"></i>
             <!-- <a id="login" href="vistas/aurelis.php" style="background: #26a69a; color: black;">Ingresar &nbsp; 
               <i class="zmdi zmdi-mail-send"></i>

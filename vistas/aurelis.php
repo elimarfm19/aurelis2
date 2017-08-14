@@ -19,10 +19,8 @@
     <title>Aurelis</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
+    <!-- CSS PESONALIZADO -->
+    <link href="../css/estiloAurelis.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -33,7 +31,7 @@
         <?php include '../php/menuPrincipal.php'; ?>
 
         <!-- **************************************CONTENIDO DE LA PÁGINA************************************* -->
-        <div id="page-wrapper" style="background-image: url('../img/fondo_2.jpeg'); background-size: 100% 100%; width: 1141px; height: 559px;">
+        <div id="page-wrapper">
 
             <div class="container-fluid">
 
@@ -169,17 +167,6 @@
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
-
-    <!-- PARA EVITAR EL SCROLL VERTICAL -->
-    <style type="text/css">
-        html,body { 
-          overflow:hidden; 
-        }
-    </style>
 
 </body>
 </html>

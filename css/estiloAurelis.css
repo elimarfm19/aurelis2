@@ -2,12 +2,17 @@
 /* Global Styles */
 body {
     margin-top: 100px;
-    background-color: #222;
+    background-image: url('../img/fondo_2.jpeg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 @media(min-width:768px) {
     body {
         margin-top: 50px;
+        background-image: url('../img/fondo_2.jpeg');
+        background-size: 100% 100%;
+        background-attachment: fixed;
     }
 }
 
@@ -18,7 +23,6 @@ body {
 #page-wrapper {
     width: 100%;
     padding: 0;
-    background-color: transparent;
 }
 
 .huge {
@@ -220,3 +224,70 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
+/* NUEVO */
+/*----------------------- MENÚ -----------------------*/
+/* IMAGEN ADMINISTRADOR (MENÚ HORIZONTAL) */
+.menuUsuario{
+    margin-top: -8px; 
+    width: 30px;
+    height: 30px;
+}
+/* IMAGEN AURELIS (MENÚ VERTICAL) */
+.aurelis{
+    background-color: rgb(38,50,56); 
+    background-size: 100% 100%; 
+    background-position: center; 
+    pointer-events:none;
+}
+/* LINEAS DE DIVISION EN EL MENU VERTICAL */
+.NavLateralDivider {
+    height: 0 !important;
+    width: 100% !important;
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.9);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin: 0 auto !important;
+}
+/*----------------------- TABLAS -----------------------*/
+/* PARA BAJAR LA TABLA (margin-top) */
+.table{
+        margin-top: 2%;
+}
+/* ALINEAR TEXTO DEL ENCABEZADO DE LA TABLA */
+th,td{
+    text-align: center;
+}
+
+/*----------------------- BOTONES GENERALES -----------------------*/
+/* ALINEA BOTÓN (nuevo cliente) */
+.btn{
+    margin-top: 8%;
+}
+
+/*----------------------- MODAL -----------------------*/
+/* PARA BAJAR LOS MODALES */
+.modal-dialog {
+    width: 600px;
+    margin: 160px auto !important;
+}
+/* LETRAS COLOR BLANCO PARA EL TITULO DE LOS MODALES*/
+.modal-title{
+    color: white !important;
+}
+/* BOTÓN CLOSE (TITULO) DE LOS MODALES DE COLOR BLACO*/
+button.close{
+    color: white !important;
+}
+
+/*----------------------- FOOTER -----------------------*/
+/* CSS PARA LINEAS DE DIVISION PARA EL FOOTER */
+.footerDivider {
+        height: 0 !important;
+        width: 100% !important;
+        background-color: transparent;
+        border: none;
+        border-top: 1px solid rgba(0,0,0,0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin: 6px auto !important;
+    }
