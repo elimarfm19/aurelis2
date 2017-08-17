@@ -1,29 +1,6 @@
-// FUNCIÓN PARA AGREGAR CLIENTE
-function agregarCliente(){
-    var url = '../php/agregarCliente.php';
-    $.ajax({
-        type:'POST',
-        url:url,
-        data:$('#forumlarioC').serialize(),
-        success:function(registro){
-            
-                $('#formularioC')[0].reset();
-                $('#mensaje').addClass('bien').html('Cliente registrado con éxito').show(200).delay(4500).hide(200);
-                $('#agrega-registros').html(registro);
-                $('#pro').val('Nuevo');
-                $('#editar').hide();
-                $('#nuevo').show();
-                $('#nuevoC').modal({
-                    show:true,
-                    backdrop:'static'
-                });
-            }
-        });
-}
-
 // FUNCIÓN PARA ELIMINAR CLIENTE, RECIBE EL cliente
 function eliminarCliente(cliente){
-    // VARIABLE QUE GUARDA LA REFERENCIA PARA ELIMNAR UN CLIENTE (eliminarCliente)
+    // VARIABLE QUE GUARDA LA REFERENCIA PARA ELIMINAR UN CLIENTE (eliminarCliente)
 	var url = '../php/eliminarCliente.php';
     // VARIABLE DE CONFIRMACIÓN PARA ELIMINAR REGISTRO
 	var pregunta = confirm('¿Esta seguro de eliminar este Registro?');

@@ -1,6 +1,6 @@
 <?php
 
-    // PARA EVITAR QUE SE MUESTREN LAS NOICIAS DE ALERTA DE PHP
+    // PARA EVITAR QUE SE MUESTREN LAS NOTICIAS DE ALERTA DE PHP
     error_reporting(E_ALL ^ E_NOTICE);
     // INICIAR LA SESIÓN - DEBE IR EN TODAS LAS PÁGINAS
     session_start();
@@ -8,7 +8,7 @@
     include '../php/conexion_aurelis.php';
 
     // SE RECIBE LA CLAVE PRIMARIA cliente
-	$cliente = $_POST['cliente'];
+	$cliente = $_POST['cliente'];  
 
 	// CONSULTA PARA ELIMINAR EL REGISTRO
 	pg_query("DELETE FROM clientes WHERE cliente = '$cliente'");
