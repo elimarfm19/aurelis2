@@ -26,82 +26,108 @@
 	$telefonoOC = $_POST['tlfOC']; // TELÉFONO OPCIONAL DEL CLIENTE
 	$direccion = $_POST['direccion']; // DIRECCIÓN DEL CLIENTE
 
-	// CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS
-	if (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($telefonoOC) && ($direccion)) {
+	// CONSULTA PARA VERIFICAR SI EL CLIENTE YA EXISTE
+	$cedula = pg_query("SELECT ci_rif FROM clientes WHERE ci_rif = '$ciRif'");
+	$cedula = pg_fetch_assoc($cedula);
+	$cedula = $cedula['ci_rif'];
 
-		// CONSULTA PARA INSERTAR EN LA TABLA clientes
-		$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
-					 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '$telefonoOC', '$direccion')";
-
-		$consulta= pg_query($consulta) or die (pg_last_error());
-
-		// SE REDIRECCIONA A LA VISTA CLIENTES.PHP 
-	    echo '  <script> swal({
-						  title: "Nuevo Cliente",
-						  text: "¡Cliente Registrado con Éxito!",
-						  type: "success",
-						  showCancelButton: false,
-						  confirmButtonColor: "#337ab7",
-						  confirmButtonText: "OK",
-						  closeOnConfirm: false,
-						  closeOnCancel: false
-						},
-						function(isConfirm){
-						  if (isConfirm) {
-						    window.location="../vistas/clientes.php";
-						  } else {
-						    swal("Cancelled", "Your imaginary file is safe :)", "error");
-						  }
-						});
-				</script>';
-		// CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS, EXCEPTO EL TELEFONO OPCIONAL
-	} elseif (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($direccion)) {
-		// CONSULTA PARA INSERTAR EN LA TABLA clientes
-		$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
-					 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '', '$direccion')";
-
-		$consulta= pg_query($consulta) or die (pg_last_error());
-
-		// SE REDIRECCIONA A LA VISTA CLIENTES.PHP 
-	    echo '  <script> swal({
-						  title: "Nuevo Cliente",
-						  text: "¡Cliente Registrado con Éxito!",
-						  type: "success",
-						  showCancelButton: false,
-						  confirmButtonColor: "#337ab7",
-						  confirmButtonText: "OK",
-						  closeOnConfirm: false,
-						  closeOnCancel: false
-						},
-						function(isConfirm){
-						  if (isConfirm) {
-						    window.location="../vistas/clientes.php";
-						  } else {
-						    swal("Cancelled", "Your imaginary file is safe :)", "error");
-						  }
-						});
-				</script>';
-	} else{
+	// CONDICIONAL PARA VERIFICAR SI EL CLIENTE YA EXISTE
+	if ($cedula == $ciRif) {
 		// MENSAJE DE VALORES INCORRECTOS (JAVASCRIPT)
-			echo '<script> swal({
-					  title: "ERROR",
-					  text: "Falta llenar campo(s).",
-					  type: "error",
-					  showCancelButton: false,
-					  confirmButtonColor: "#DD6B55",
-					  confirmButtonText: "OK",
-					  closeOnConfirm: false,
-					  closeOnCancel: false
-					},
-					function(isConfirm){
-					  if (isConfirm) {
-					    window.location="../vistas/clientes.php";
-					  } else {
-					    swal("Cancelled", "Your imaginary file is safe :)", "error");
-					  }
-					});
+		echo '<script> swal({
+				  title: "ERROR",
+				  text: "Cliente ya existente.",
+				  type: "error",
+				  showCancelButton: false,
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText: "OK",
+				  closeOnConfirm: false,
+				  closeOnCancel: false
+				},
+				function(isConfirm){
+				  if (isConfirm) {
+				    window.location="../vistas/clientes.php";
+				  } else {
+				    swal("Cancelled", "Your imaginary file is safe :)", "error");
+				  }
+				});
+				</script>';
+	  // CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS
+	} elseif (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($telefonoOC) && ($direccion)) {
+
+			// CONSULTA PARA INSERTAR EN LA TABLA clientes
+			$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
+						 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '$telefonoOC', '$direccion')";
+
+			$consulta= pg_query($consulta) or die (pg_last_error());
+
+			// SE REDIRECCIONA A LA VISTA CLIENTES.PHP 
+		    echo '  <script> swal({
+							  title: "Nuevo Cliente",
+							  text: "¡Cliente Registrado con Éxito!",
+							  type: "success",
+							  showCancelButton: false,
+							  confirmButtonColor: "#337ab7",
+							  confirmButtonText: "OK",
+							  closeOnConfirm: false,
+							  closeOnCancel: false
+							},
+							function(isConfirm){
+							  if (isConfirm) {
+							    window.location="../vistas/clientes.php";
+							  } else {
+							    swal("Cancelled", "Your imaginary file is safe :)", "error");
+							  }
+							});
 					</script>';
-	}
+			// CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS, EXCEPTO EL TELEFONO OPCIONAL
+		}elseif (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($direccion)) {
+			// CONSULTA PARA INSERTAR EN LA TABLA clientes
+			$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
+						 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '', '$direccion')";
+
+			$consulta= pg_query($consulta) or die (pg_last_error());
+
+			// SE REDIRECCIONA A LA VISTA CLIENTES.PHP 
+		    echo '  <script> swal({
+							  title: "Nuevo Cliente",
+							  text: "¡Cliente Registrado con Éxito!",
+							  type: "success",
+							  showCancelButton: false,
+							  confirmButtonColor: "#337ab7",
+							  confirmButtonText: "OK",
+							  closeOnConfirm: false,
+							  closeOnCancel: false
+							},
+							function(isConfirm){
+							  if (isConfirm) {
+							    window.location="../vistas/clientes.php";
+							  } else {
+							    swal("Cancelled", "Your imaginary file is safe :)", "error");
+							  }
+							});
+					</script>';
+		}else {
+			// MENSAJE DE VALORES INCORRECTOS (JAVASCRIPT)
+				echo '<script> swal({
+						  title: "ERROR",
+						  text: "Falta llenar campo(s).",
+						  type: "error",
+						  showCancelButton: false,
+						  confirmButtonColor: "#DD6B55",
+						  confirmButtonText: "OK",
+						  closeOnConfirm: false,
+						  closeOnCancel: false
+						},
+						function(isConfirm){
+						  if (isConfirm) {
+						    window.location="../vistas/clientes.php";
+						  } else {
+						    swal("Cancelled", "Your imaginary file is safe :)", "error");
+						  }
+						});
+						</script>';
+		}
 ?>
 
 </body>
