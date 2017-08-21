@@ -261,7 +261,7 @@ th,td{
 
 /*----------------------- BOTONES GENERALES -----------------------*/
 /* ALINEA BOTÓN (nuevo cliente) */
-.btn{
+.btnNuevoC{
     margin-top: 8%;
 }
 
@@ -269,7 +269,7 @@ th,td{
 /* PARA BAJAR LOS MODALES */
 .modal-dialog {
     width: 600px;
-    margin: 160px auto !important;
+    margin: 100px auto !important;
 }
 /* LETRAS COLOR BLANCO PARA EL TITULO DE LOS MODALES*/
 .modal-title{
@@ -278,6 +278,13 @@ th,td{
 /* BOTÓN CLOSE (TITULO) DE LOS MODALES DE COLOR BLACO*/
 button.close{
     color: white !important;
+}
+/* IMAGEN CLIENTE (modalNuevoC) */
+.imgCliente {
+    margin-top: -5px;
+    width: 70px;
+    height: 70px;
+    margin-left: 30%;
 }
 
 /*----------------------- FOOTER -----------------------*/

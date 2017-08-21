@@ -41,14 +41,15 @@
                     <!-- INCLUYE EL MODAL PARA REGISTRAR CLIENTE -->
                     <?php include '../vistas/modalNuevoC.php'; ?>
                     <!-- BOTÓN PARA LEVANTAR MODAL REGISTRAR CLIENTE -->
-                    <button data-toggle="modal" data-target="#nuevoC" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                    <button data-toggle="modal" data-target="#nuevoC" class="btn btnNuevoC btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span></button>
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>ID Cliente</th>
+                                <th>C.I./RIF</th>
                                 <th>Nombre y Apellido</th>
-                                <th>Telefono 1</th>
-                                <th>Telefono 2</th>
+                                <th>Teléfono Principal</th>
+                                <th>Teléfono Opcional</th>
+                                <th>Dirección</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>

@@ -2,8 +2,6 @@
 <html>
 <head>
 	<title></title>
-    <!-- FUNCIONES CRUD PARA CLIENTE -->
-	<script src="../js/funcionesCliente.js"></script>
 	<!-- HOJA DE ESTILO PARA SWEETALERT (ALERTAS DE JAVASCRIPT) -->
     <link href="../css/sweetalert.css" rel="stylesheet">
     <!-- JAVASCRIPT PARA SWEETALERT -->
@@ -20,24 +18,20 @@
     include '../php/conexion_aurelis.php';
 
     // RECIBIR LOS DATOS DESDE EL FORMULARIO (modalNuevoC.php)
+    $nacionalidad = $_POST['nacionalidad']; // NACIONALIDAD DEL CLIENTE
+    $ciRif = $_POST['ciRif']; // CÉDULA O RIF DEL CLIENTE
 	$nombreC = $_POST['nombreC']; // NOMBRE DEL CLIENTE
 	$apellidoC = $_POST['apellidoC']; // APELLIDO DEL CLIENTE
-	$telefonoPC = $_POST['tlfPC']; // TELEFONO PRINCIPAL DEL CLIENTE
-	$telefonoOC = $_POST['tlfOC']; // TELEFONO OPCIONAL DEL CLIENTE
+	$telefonoPC = $_POST['tlfPC']; // TELÉFONO PRINCIPAL DEL CLIENTE
+	$telefonoOC = $_POST['tlfOC']; // TELÉFONO OPCIONAL DEL CLIENTE
+	$direccion = $_POST['direccion']; // DIRECCIÓN DEL CLIENTE
 
 	// CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS
-	if (isset($nombre) && isset($apellidoC) && isset($telefonoPC) && isset($telefonoOC)) {
-
-		// CONSULTA PARA BUSCAR EL ÚLTIMO ID DE CLIENTE
-		$ultimoC = pg_query("SELECT cliente FROM clientes ORDER BY cliente DESC LIMIT 1") or die (pg_last_error());
-		$cliente_ = pg_fetch_assoc($ultimoC);
-		$cliente= $cliente_['cliente'];
-		// CONVERSIÓN DE CHAR A INTEGER PARA SUMAR 1 AL ÚLTIMO ID DE CLIENTE
-		$cliente = ((int) $cliente) +1;
+	if (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($telefonoOC) && ($direccion)) {
 
 		// CONSULTA PARA INSERTAR EN LA TABLA clientes
-		$consulta = "INSERT INTO clientes (cliente, nombre, apellido, telefono1, telefono2)
-					 VALUES ('$cliente', '$nombreC', '$apellidoC', '$telefonoPC', '$telefonoOC')";
+		$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
+					 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '$telefonoOC', '$direccion')";
 
 		$consulta= pg_query($consulta) or die (pg_last_error());
 
@@ -60,7 +54,34 @@
 						  }
 						});
 				</script>';
-	} else {
+		// CONDICIONAL PARA ASEGURAR QUE LAS VARIABLES NO ESTEN VACIAS, EXCEPTO EL TELEFONO OPCIONAL
+	} elseif (($nacionalidad) && ($ciRif) && ($nombreC) && ($apellidoC) && ($telefonoPC) && ($direccion)) {
+		// CONSULTA PARA INSERTAR EN LA TABLA clientes
+		$consulta = "INSERT INTO clientes (nacionalidad, ci_rif, nombre, apellido, telefono1, telefono2, direccion)
+					 VALUES ('$nacionalidad', '$ciRif', '$nombreC', '$apellidoC', '$telefonoPC', '', '$direccion')";
+
+		$consulta= pg_query($consulta) or die (pg_last_error());
+
+		// SE REDIRECCIONA A LA VISTA CLIENTES.PHP 
+	    echo '  <script> swal({
+						  title: "Nuevo Cliente",
+						  text: "¡Cliente Registrado con Éxito!",
+						  type: "success",
+						  showCancelButton: false,
+						  confirmButtonColor: "#337ab7",
+						  confirmButtonText: "OK",
+						  closeOnConfirm: false,
+						  closeOnCancel: false
+						},
+						function(isConfirm){
+						  if (isConfirm) {
+						    window.location="../vistas/clientes.php";
+						  } else {
+						    swal("Cancelled", "Your imaginary file is safe :)", "error");
+						  }
+						});
+				</script>';
+	} else{
 		// MENSAJE DE VALORES INCORRECTOS (JAVASCRIPT)
 			echo '<script> swal({
 					  title: "ERROR",
